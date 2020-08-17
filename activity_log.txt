@@ -1,0 +1,30 @@
+
+2020-08-17 03:44:45 
+ iiiiiiicgg.........gg.........ggg.gggg....ggggg..gg......gggggggggggggggggggggg.
+ ggggggggggggggggggggggggggggg.........gggggggggggggg.ggggggggggg.........ggggggg
+ ggggggggggggggggggggg.........ggggggggggggggggggggggg.ggggg.gggggggggggggggggggg
+ gggggggggggggg.........gggggggggggggggggggggggggggggggg.ggggggggggggggggggggg.gg
+ ..gggggggggggg.gggggggggggg.gggggggggggggg.gg.........ggggggggggggggggg..gggggg.
+ ...ggggggg.g..ggg.gggg.ggggggg.gg..gggggggggggg.gggg...gg..gggg..ggggg..ggg.gggg
+ ..ggggg.gggg.ggg.ggggg..ggg.....ggggggggggg..ggggggg......ggg.gggggg.gg.gggggggg
+ g.ggg.g....gggg.gggggggggggg..g......ggggg.........g...gg.gggggggggggggggg.g.ggg
+ gggg.gg.ggggggggggg.ggggggggggg.ggg.....gggggggggggggggggggggggggggggggggggggggg
+ g.....gggggggg.ggggggggggggg..ggggggggggggggggggggggggggggggggg..ggggggggggg.ggg
+ ggggggggg..gggggggggggggggggggggggggggggggggggg.....gggggggg....ggggggggggggggg.
+ .ggggggggggggg.g.gg..ggggggg.g...gggggg..gggggg..ggggggggggggggg.....m...mmmm...
+ .....mmmmmmmmm..mmmmm..mmmmmmmmmmmm.mmmmmmmmmmmmm......mmmmmmmmmmmmmmmmmmmmmmmmm
+ mmmmmmmmmmiiiim.cccc..cc.cciiciii.cmmmcgmmmmmmcii.immmmmmmmmmmmmmmmmmmmmiimmmmmm
+ immmmmmmmmi.mmmmimmmmiim....mmmmmmmmmmmmmmm.mmmmmmmmm.m..mmmmmmimmmmiim......mmm
+ mmmmimmmimii....iimmmm.mmm.mmm.........rii
+2020-08-17 05:04:25 /Users/moon/Library/Application Support/pico-8/carts/hello.p8
+ i..i.........ii
+2020-08-17 05:06:37 /Users/moon/Library/Application Support/pico-8/carts/./hello.p8
+ ii........i.i..i.....iiii.........i.........i.........ii.........i.i.mmc........
+ .c......cccc.......cmc.........c.........c.........c.........cc.........ccc.....
+ ....c......cccccc.........cccc.c.ccccccccccccc.........c.......ccccccccc.c.ccc..
+ ...cc.........c.c...cccc.....c.c.cccc..cc.ccccccc.c.ccc.........cc...cc.ccccc.cc
+ ccccccc.cc.c....cccccccccccccccccccccc.........ccccccc...ccccccccccccccccccc.cc.
+ .ccc.cccccirrrc......cc....cc.cc.cccc.........cgggggggggggg....gggggggggg.g.....
+ ....ggcc......cccc.ccccc.c.ccccc..cccccccc.........cccccccccccccccccccccc.cccccc
+ ccccccc.cccccccccccccccccccccccc.cccccccccc.........cc.cccccc.........cccccccccc
+ 
