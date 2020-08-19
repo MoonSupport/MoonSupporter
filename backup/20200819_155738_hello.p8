@@ -156,7 +156,8 @@ function player_update()
     end
   elseif player.dx>0 then
 
-    
+    player.dx=limit_speed(player.dx,player.max_dx)
+
     if collide_map(player,"right",1) then
       player.dx=0
     end

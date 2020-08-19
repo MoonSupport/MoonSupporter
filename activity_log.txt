@@ -28,4 +28,19 @@
  ....ggcc......cccc.ccccc.c.ccccc..cccccccc.........cccccccccccccccccccccc.cccccc
  ccccccc.cccccccccccccccccccccccc.cccccccccc.........cc.cccccc.........cccccccccc
  ccccccccccccccccc.cccc.ccc.ccc.ccccccccccccirr_________r__c.........cc.........c
+ c.........c.........cc.........cc...
+2020-08-18 07:43:30 
+ iiiicccii.i...i
+2020-08-18 07:44:15 /Users/moon/Library/Application Support/pico-8/carts/hello.p8
+ iiitgmmmmmcccccccc.........
+2020-08-19 15:22:36 
+ i.........
+2020-08-19 15:25:39 /Users/moon/Library/Application Support/pico-8/carts/hello.p8
+ iic.......ccc..ccccccccccccc.........ccccccc.cccccccccc..c.........ccccccccc....
+ .....c..c...cccccccccccccccccccccccccccccc.........cccccccccccccccccccc.cccccccc
+ cccccccc.ccccccccccccccccc......cc.cc.ccccccccccccccccc.ccccccccccccccccccccccc.
+ ccccccccccccccccccccccccccccccccccccccc.c.c...cccccccccccccccccccc.ccccccccccccc
+ cc...ccccccccccccccc..c..ccciicicci..ccii.ccccccccci..iiccciiii.cccirrrrriccccc.
+ cccccccccccccccccccccccrrrr____cccccirrrrrccc.cc.........cccccc.........cri.....
+ ....cccciiicc.......c..cciiiccccccc.ccccciicc..iicccccciiicccciiiii.ccccc.......
  

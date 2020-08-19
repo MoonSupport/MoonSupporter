@@ -4,29 +4,29 @@ __lua__
 
 
 function _init()
-	player={
-    sp=1,
-    x=59,
-    y=59,
-    w=8,
-    h=8,
-    flp=false,
-    dx=0,
-    dy=0,
-    max_dx=2,
-    max_dy=3,
-    acc=0.5,
-    boost=4,
-    anim=0,
-    running=false,
-    jumping=false,
-    falling=false,
-    sliding=false,
-    landed=false
-  }
-
-  gravity=0.3
-  friction=0.85
+	player= {
+		sprite_num=1,
+		x=59,
+		y=59,
+		w=8,
+		h=8,
+		flp=false,
+		dx=0,
+		dy=0,
+		max_dx=2,
+		max_dy=3,
+		acc=0.5,
+		boost=4,
+		animation=0,
+		running=false ,
+		jumping=false ,
+		falling=false ,
+		sliding=false ,
+		landed=false
+	}
+	
+	gravity= 0.3
+	friction=0.85
 
 end
 
@@ -53,128 +53,117 @@ function _draw()
 end
 -->8
 function collide_map(obj,aim,flag)
- --obj = table needs x,y,w,h
- --aim = left,right,up,down
+		
+		local x=obj.x local y=obj.y
+		local w=obj.w local h=obj.h
+		
+		local x1=0 local y1=0
+		local x2=0 local y2=0
+		
+		if aim=="left" then
+			x1=x-1 y1=y
+			x2=x 		y2=y+h-1
+			
+		elseif aim=="right" then
+			x1=x+h			y1=y
+			x2=x+w+1 y2=y+h-1
+			
+		elseif aim=="up" then
+			x1=x+1			y1=y-1
+			x2=x+w-1	y2=y
+			
+		elseif aim=="down" then
+			x1=x			y1=y+h
+			x2=x+w	y=y+h
+		end
 
- local x=obj.x  local y=obj.y
- local w=obj.w  local h=obj.h
+	x1/=8			y1/=8
+	x2/=8			y2/=8
 
- local x1=0	 local y1=0
- local x2=0  local y2=0
-
- if aim=="left" then
-   x1=x-1  y1=y
-   x2=x    y2=y+h-1
-
- elseif aim=="right" then
-   x1=x+w-1    y1=y
-   x2=x+w  y2=y+h-1
-
- elseif aim=="up" then
-   x1=x+2    y1=y-1
-   x2=x+w-3  y2=y
-
- elseif aim=="down" then
-   x1=x+2      y1=y+h
-   x2=x+w-3    y2=y+h
- end
-
- --pixels to tiles
- x1/=8    y1/=8
- x2/=8    y2/=8
-
- if fget(mget(x1,y1), flag)
- or fget(mget(x1,y2), flag)
- or fget(mget(x2,y1), flag)
- or fget(mget(x2,y2), flag) then
-   return true
- else
-   return false
- end
+	if fget(mget(x1,y1), flag)
+	or fget(mget(x1,y2), flag)
+	or fget(mget(x2,y1), flag)
+	or fget(mget(x2,y2), flag) then
+		return true
+	else
+		return false
+	end	
 
 end
 -->8
 function player_update()
-  --physics
-  player.dy+=gravity
-  player.dx*=friction
+	player.dy+=gravity
+	player.dx*=friction
+	
+	--left
+	if btn(0) then
+		player.dx-=player.acc
+		player.running=true
+		player.falling=true
+	end
+	
+	--right
+	if btn(1) then
+		player.dx+=player.acc
+		player.running=true
+		player.falling=true
+	end
+	
+	if player.running
+	and not btn(1)
+	and not btn(2)
+	and not player.falling
+	and not player.jumping then
+		player.running=false
+		player.sliding=true
+	end
+	
+	-- press x
+	if btnp(5)
+	and player.landed then
+		player.dy-=player.boost
+		player.landed=false
+	end
+	
+	if player.dy>0 then
+		player.falling=true
+		player.landed=false
+		player.jumping=false
+		
+		if collide_map(player,"down",0) then
+			player.landed=true
+			player.falling=false
+			player.dy=0
+			player.y-=(player.y+player.h)%8
+			end
+		elseif player.dy<0 then
+			player.jumping=true
+			if collide_mapo(player,"up",1)
+				player.dy=0
+			end
+		end	
+		
+		if player.dx<0 then
+			if collide_map(player,"left",1)
+				player.dx=0
+			end
+		else if player.dx>0 then
+			if collide_map(player,"right",1) then
+				player.dx=0
+			end
+		end
+		
+		if player.sliding then
+			if abs(player.dx)<.2
+			or player.running then
+				player.dx=0
+				player.sliding=false
+			end
+		end										
+	
+	player.x=player.dx
+	player.y=player.dy
 
-  --controls
-  if btn(⬅️) then
-    player.dx-=player.acc
-    player.running=true
-    player.flp=true
-  end
-  if btn(➡️) then
-    player.dx+=player.acc
-    player.running=true
-    player.flp=false
-  end
-
-  --slide
-  if player.running
-  and not btn(⬅️)
-  and not btn(➡️)
-  and not player.falling
-  and not player.jumping then
-    player.running=false
-    player.sliding=true
-  end
-
-  --jump
-  if btnp(❎)
-  and player.landed then
-    player.dy-=player.boost
-    player.landed=false
-  end
-
-  --check collision up and down
-  if player.dy>0 then
-    player.falling=true
-    player.landed=false
-    player.jumping=false
-
-
-    if collide_map(player,"down",0) then
-      player.landed=true
-      player.falling=false
-      player.dy=0
-      player.y-=((player.y+player.h+1)%8)-1
-    end
-  elseif player.dy<0 then
-    player.jumping=true
-    if collide_map(player,"up",1) then
-      player.dy=0
-    end
-  end
-
-  --check collision left and right
-  if player.dx<0 then
-
-    if collide_map(player,"left",1) then
-      player.dx=0
-    end
-  elseif player.dx>0 then
-
-    
-    if collide_map(player,"right",1) then
-      player.dx=0
-    end
-  end
-
-  --stop sliding
-  if player.sliding then
-    if abs(player.dx)<.2
-    or player.running then
-      player.dx=0
-      player.sliding=false
-    end
-  end
-
-  player.x+=player.dx
-  player.y+=player.dy
-  
-  
 end
 __gfx__
 00444440004444400004444400044444000444440004444400044444c00444440000000000000000000000000000000000000000000000000000000000000000

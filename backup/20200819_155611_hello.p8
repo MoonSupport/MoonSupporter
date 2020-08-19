@@ -151,12 +151,15 @@ function player_update()
   --check collision left and right
   if player.dx<0 then
 
+    player.dx=limit_speed(player.dx,player.max_dx)
+
     if collide_map(player,"left",1) then
       player.dx=0
     end
   elseif player.dx>0 then
 
-    
+    player.dx=limit_speed(player.dx,player.max_dx)
+
     if collide_map(player,"right",1) then
       player.dx=0
     end
@@ -173,8 +176,7 @@ function player_update()
 
   player.x+=player.dx
   player.y+=player.dy
-  
-  
+  end
 end
 __gfx__
 00444440004444400004444400044444000444440004444400044444c00444440000000000000000000000000000000000000000000000000000000000000000
